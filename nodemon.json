@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json.schemastore.org/nodemon",
+	"watch": ["src/**/*", "public/**/*"],
+	"ext": "ts,css,html",
+	"ignore": ["src/**/*.spec.ts"],
+	"exec": "yarn build"
+}
