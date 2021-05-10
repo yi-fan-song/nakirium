@@ -3,6 +3,8 @@ if (nakiriBtn !== undefined && nakiriBtn !== null) {
 	nakiriBtn.onclick = getNakirium;
 }
 
+const nakiriumSource = ["NPMhb_mIIhU", "eMIXyxt2xv4", "EVTIYVwYWz4"];
+
 function getNakirium(e: MouseEvent) {
 	const nakiriPlayer = document.createElement("iframe");
 
@@ -17,7 +19,15 @@ function getNakirium(e: MouseEvent) {
 	nakiriPlayer.classList.add("grid-center");
 	nakiriPlayer.id = "nakirium-player";
 
-	const youtubeSrc = "https://www.youtube.com/embed/NPMhb_mIIhU";
+	let youtubeSrc = "https://www.youtube.com/embed/";
+
+	const startTime = getRandomInt(570);
+
+	youtubeSrc += nakiriumSource[getRandomInt(3)];
+	youtubeSrc += "?start=";
+	youtubeSrc += startTime;
+	youtubeSrc += "&end=";
+	youtubeSrc += startTime + 30;
 
 	nakiriPlayer.setAttribute("src", youtubeSrc);
 
@@ -25,4 +35,8 @@ function getNakirium(e: MouseEvent) {
 		nakiriPlayer
 	);
 	(e.target as HTMLElement).parentElement?.remove();
+}
+
+function getRandomInt(max: number) {
+	return Math.floor(Math.random() * max);
 }
