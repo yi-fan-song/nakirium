@@ -46,7 +46,6 @@
 		"no-useless-rename": "warn",
 		"no-unneeded-ternary": "warn",
 		"no-undef-init": "warn",
-		"no-extra-bind": "warn",
-		"no-unused-vars": "off" // off to not collide with the same typescript rule
+		"no-extra-bind": "warn"
 	}
 }
